@@ -1,0 +1,6 @@
+Infos : Je n'ai pas pu finir car je travail en coupé, j'ai donc eu trés peu de temps, j'ai fais ce que j'ai pu,
+j'ai été ravis d'avoir fais ce test, il était un peu compliqué au niveau des latitude longitude :)
+
+Les url disponibles :
+
+URL : /, /admin, /inscription
