@@ -39,6 +39,17 @@ class CrossingPoints
         $this->trekkings = new ArrayCollection();
     }
 
+    public function ar()
+    {
+        return array($this->lon, $this->lat);
+    }
+
+    public function __toString()
+    {
+        foreach ($this->ar() as $dd)
+        return $dd;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

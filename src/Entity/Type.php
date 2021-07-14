@@ -58,6 +58,10 @@ class Type
     {
         return $this->trekkings;
     }
+    public function __toString()
+    {
+        return $this->shifting;
+    }
 
     public function addTrekking(Trekking $trekking): self
     {

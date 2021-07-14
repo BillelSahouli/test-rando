@@ -39,6 +39,17 @@ class Start
         $this->trekkings = new ArrayCollection();
     }
 
+    public function ar()
+    {
+        return array($this->first_position, $this->sec_position);
+    }
+
+    public function __toString()
+    {
+        foreach ($this->ar() as $dd)
+            return $dd;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

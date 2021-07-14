@@ -1,16 +1,25 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v5.3.99',
-    'version' => '5.3.99.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'symfony/website-skeleton',
+    'reference' => 'd00fc1806c5273430a02f49404b97105e9fd3e10',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
+    '__root__' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd00fc1806c5273430a02f49404b97105e9fd3e10',
+    ),
     'composer/package-versions-deprecated' => 
     array (
       'pretty_version' => '1.11.99.2',
@@ -163,6 +172,15 @@
       array (
       ),
       'reference' => '56070bebac6e77230ed7d306ad13528e60732871',
+    ),
+    'easycorp/easyadmin-bundle' => 
+    array (
+      'pretty_version' => 'v3.4.2',
+      'version' => '3.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '19d977b7522759492bfc2c3c0c3fd24e125946a7',
     ),
     'egulias/email-validator' => 
     array (
@@ -442,8 +460,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
@@ -1044,6 +1062,15 @@
       ),
       'reference' => 'e66119f3de95efc359483f810c4c3e6436279436',
     ),
+    'symfony/polyfill-uuid' => 
+    array (
+      'pretty_version' => 'v1.23.0',
+      'version' => '1.23.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9165effa2eb8a31bb3fa608df9d529920d21ddd9',
+    ),
     'symfony/process' => 
     array (
       'pretty_version' => 'v5.3.2',
@@ -1229,6 +1256,15 @@
       ),
       'reference' => 'b70c2837355843196e0e65822eb2b2326ef3a7b0',
     ),
+    'symfony/uid' => 
+    array (
+      'pretty_version' => 'v5.3.3',
+      'version' => '5.3.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '45853bbc72f2b91c32e707afe7f896fddb3ee8e9',
+    ),
     'symfony/validator' => 
     array (
       'pretty_version' => 'v5.3.3',
@@ -1273,15 +1309,6 @@
       array (
       ),
       'reference' => '8feb731cfc248cce5c0ac6eeba63ec4923c6a264',
-    ),
-    'symfony/website-skeleton' => 
-    array (
-      'pretty_version' => 'v5.3.99',
-      'version' => '5.3.99.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
     ),
     'symfony/yaml' => 
     array (
