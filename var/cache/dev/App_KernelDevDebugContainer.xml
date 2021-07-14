@@ -97,7 +97,7 @@
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
     <parameter key="kernel.http_method_override">false</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">fr</parameter>
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">null</parameter>
     <parameter key="cache.prefix.seed">_C:\wamp64\www\test-rando.App_KernelDevDebugContainer</parameter>
@@ -352,6 +352,34 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\CrossingPointsRepository" class="App\Repository\CrossingPointsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\DifficultyRepository" class="App\Repository\DifficultyRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\DistrictRepository" class="App\Repository\DistrictRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\StartRepository" class="App\Repository\StartRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TownRepository" class="App\Repository\TownRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TrekkingRepository" class="App\Repository\TrekkingRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TypeRepository" class="App\Repository\TypeRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -368,7 +396,7 @@
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="service" id="router.default" on-invalid="ignore"/>
     </service>
     <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener">
@@ -556,7 +584,7 @@
     </service>
     <service id="slugger" class="Symfony\Component\String\Slugger\AsciiSlugger">
       <tag name="kernel.locale_aware"/>
-      <argument>en</argument>
+      <argument>fr</argument>
     </service>
     <service id="container.getenv" class="Closure">
       <tag name="routing.expression_language_function" function="env"/>
@@ -839,7 +867,7 @@
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument>C:\wamp64\www\test-rando/translations</argument>
       <argument>C:\wamp64\www\test-rando/templates</argument>
       <argument type="collection">
@@ -875,7 +903,7 @@
       <argument type="service" id="translation.provider_collection"/>
       <argument type="service" id="translation.writer"/>
       <argument type="service" id="translation.reader"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection"/>
       <argument type="collection"/>
       <call method="setName">
@@ -1714,7 +1742,7 @@
       <tag name="kernel.locale_aware"/>
       <argument type="service" id=".service_locator.O24_MAy"/>
       <argument type="service" id="translator.formatter.default"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -3112,7 +3140,7 @@
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="parameter_bag" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
-      <argument>en</argument>
+      <argument>fr</argument>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
@@ -4394,7 +4422,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.T9FvxjX"/>
+      <argument type="service" id=".service_locator..HwstQI"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5524,6 +5552,20 @@
     <service id=".abstract.instanceof.App\Form\RegisterType" class="App\Form\RegisterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CrossingPointsRepository" class="App\Repository\CrossingPointsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CrossingPointsRepository" class="App\Repository\CrossingPointsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DifficultyRepository" class="App\Repository\DifficultyRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DifficultyRepository" class="App\Repository\DifficultyRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DistrictRepository" class="App\Repository\DistrictRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DistrictRepository" class="App\Repository\DistrictRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StartRepository" class="App\Repository\StartRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StartRepository" class="App\Repository\StartRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TownRepository" class="App\Repository\TownRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TownRepository" class="App\Repository\TownRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TrekkingRepository" class="App\Repository\TrekkingRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TrekkingRepository" class="App\Repository\TrekkingRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TypeRepository" class="App\Repository\TypeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TypeRepository" class="App\Repository\TypeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.0GV1BZZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6114,10 +6156,17 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.T9FvxjX" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..HwstQI" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
+        <argument key="App\Repository\CrossingPointsRepository" type="service_closure" id="App\Repository\CrossingPointsRepository"/>
+        <argument key="App\Repository\DifficultyRepository" type="service_closure" id="App\Repository\DifficultyRepository"/>
+        <argument key="App\Repository\DistrictRepository" type="service_closure" id="App\Repository\DistrictRepository"/>
+        <argument key="App\Repository\StartRepository" type="service_closure" id="App\Repository\StartRepository"/>
+        <argument key="App\Repository\TownRepository" type="service_closure" id="App\Repository\TownRepository"/>
+        <argument key="App\Repository\TrekkingRepository" type="service_closure" id="App\Repository\TrekkingRepository"/>
+        <argument key="App\Repository\TypeRepository" type="service_closure" id="App\Repository\TypeRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">

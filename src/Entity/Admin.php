@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AdminRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -34,6 +36,16 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Trekking::class, mappedBy="creator", orphanRemoval=true)
+     */
+    private $trekkings;
+
+    public function __construct()
+    {
+        $this->trekkings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -122,5 +134,35 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|Trekking[]
+     */
+    public function getTrekkings(): Collection
+    {
+        return $this->trekkings;
+    }
+
+    public function addTrekking(Trekking $trekking): self
+    {
+        if (!$this->trekkings->contains($trekking)) {
+            $this->trekkings[] = $trekking;
+            $trekking->setCreator($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrekking(Trekking $trekking): self
+    {
+        if ($this->trekkings->removeElement($trekking)) {
+            // set the owning side to null (unless already changed)
+            if ($trekking->getCreator() === $this) {
+                $trekking->setCreator(null);
+            }
+        }
+
+        return $this;
     }
 }
